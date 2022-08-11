@@ -1,0 +1,45 @@
+.body {
+  height: 83vh;
+  background-color: #d1411e;
+}
+.Don {
+  position: relative;
+  background-color: #d1411e;
+  color: white;
+  font-size: 20px;
+  width: 170px;
+  margin-top: 39vh;
+  margin-left: 7vw;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px solid #d1411e;
+}
+.Don:hover {
+  background-color: #4da537;
+  color: rgb(255, 255, 255);
+  border: 2px solid #37981f;
+}
+
+@media screen and (max-width: 480px) {
+  .body {
+    height: 70vh;
+    background-color: #d1411e;
+  }
+  .Don {
+    position: relative;
+    background-color: #d1411e;
+    color: white;
+    font-size: 20px;
+    width: 320px;
+    margin-top: 56vh;
+    margin-left: 12vw;
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid #ffffff;
+  }
+  .Don:hover {
+    background-color: #4da537;
+    color: rgb(255, 255, 255);
+    border: 2px solid #37981f;
+  }
+}

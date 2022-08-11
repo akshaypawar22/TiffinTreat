@@ -1,0 +1,43 @@
+.container {
+    height: calc(100vh - 160px);
+    background-color: #222;
+    padding-top: 10px;
+}
+
+.card {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 15px;
+    color: #b7903c;
+}
+
+.text {
+    color: lightgray;
+}
+
+.motto {
+    color: rgb(211, 211, 211);
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        height: 45vh;
+        text-align: center;
+    }
+    .item {
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 15px;
+    }
+
+    .text {
+        font-size: 11px;
+    }
+}
