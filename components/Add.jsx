@@ -63,7 +63,7 @@ const Add = ({ setClose }) => {
         <span onClick={() => setClose(true)} className={styles.close}>
           X
         </span>
-        <h1>Add a new Pizza</h1>
+        <h1>Add a new Meal</h1>
         <div className={styles.item}>
           <label className={styles.label}>Choose an image</label>
           <input type="file" onChange={(e) => setFile(e.target.files[0])} />
@@ -90,7 +90,7 @@ const Add = ({ setClose }) => {
             onChange={(e) => setType(e.target.value)}
           >
             <option value="Choose">Choose</option>
-            <option value="SELL">SELL</option>
+            <option value="SELL">ORDER</option>
             <option value="FREE">FREE</option>
           </select>
         </div>

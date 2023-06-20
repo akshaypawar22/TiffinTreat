@@ -2,10 +2,13 @@ import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "../../styles/Admin.module.css";
+import Add from "../../components/Add";
+import AddButton from "../../components/AddButton";
 
 const Index = ({ orders, products }) => {
   const [productList, setProductList] = useState(products);
   const [orderList, setOrderList] = useState(orders);
+  const [close, setClose] = useState(true);
   const status = ["preparing", "on the way", "delivered"];
 
   const handleDelete = async (id) => {
@@ -40,6 +43,10 @@ const Index = ({ orders, products }) => {
   return (
     <div className={styles.container}>
       <div className={styles.item}>
+        <div className={styles.addbut}>
+          {<AddButton setClose={setClose} />}
+        </div>
+        {!close && <Add setClose={setClose} />}
         <h1 className={styles.title}>Products</h1>
         <table className={styles.table}>
           <tbody>

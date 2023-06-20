@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
 
 const Product = ({ product }) => {
+  // Product Add button UI
   const [price, setPrice] = useState(product.prices[0]);
   const [size, setSize] = useState(0);
   const [quantity, setQuantity] = useState(1);

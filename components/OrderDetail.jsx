@@ -10,7 +10,7 @@ const OrderDetail = ({ total, createOrder }) => {
 
   const handleClick = () => {
     createOrder({ customer, address, total, method: 0 });
-    dispatch(update({customer}))
+    dispatch(update({ customer }))
   };
 
   return (
@@ -32,6 +32,7 @@ const OrderDetail = ({ total, createOrder }) => {
             type="text"
             placeholder="+1 234 567 89"
             className={styles.input}
+            maxLength={10}
           />
         </div>
         <div className={styles.item}>

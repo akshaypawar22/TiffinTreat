@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
 import axios from "axios";
 import OrderDetail from "../components/OrderDetail";
+import Script from 'next/script';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -21,12 +22,12 @@ const Cart = () => {
   const [cash, setCash] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
-  
+
 
   const createOrder = async (data) => {
     try {
       const res = await axios.post("http://localhost:3000/api/orders", data);
-      res.status === 201 &&  router.push("/orders/"+res.data._id);
+      res.status === 201 && router.push("/orders/" + res.data._id);
       dispatch(reset());
       // if (res.status === 201) {
       //   // dispatch(reset());
@@ -99,51 +100,51 @@ const Cart = () => {
       <div className={styles.left}>
         <table className={styles.table}>
           <tbody>
-          <tr className={styles.trTitle}>
-            <th>Product</th>
-            <th>Name</th>
-            <th>Extras</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
+            <tr className={styles.trTitle}>
+              <th>Product</th>
+              <th>Name</th>
+              <th>Extras</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
           </tbody>
           <tbody>
-          {cart.products.map((product) => (
-            <tr className={styles.tr} key={product._id}>
-              <td>
-                <div className={styles.imgContainer}>
-                  <Image
-                    src={product.img}
-                    layout="fill"
-                    objectFit="cover"
-                    alt=""
-                  />
-                </div>
-              </td>
-              <td>
-                <span className={styles.name}>{product.title}</span>
-              </td>
-              <td>
-                <span className={styles.extras}>
-                  {product.extras.map((extra) => (
-                    <span key={extra._id}>{extra.text}, </span>
-                  ))}
-                </span>
-              </td>
-              <td>
-                <span className={styles.price}>₹{product.prices[0]}</span>
-              </td>
-              <td>
-                <span className={styles.quantity}>{product.quantity}</span>
-              </td>
-              <td>
-                <span className={styles.total}>
-                  ₹{product.price * product.quantity}
-                </span>
-              </td>
-            </tr>
-          ))}
+            {cart.products.map((product) => (
+              <tr className={styles.tr} key={product._id}>
+                <td>
+                  <div className={styles.imgContainer}>
+                    <Image
+                      src={product.img}
+                      layout="fill"
+                      objectFit="cover"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>
+                  <span className={styles.name}>{product.title}</span>
+                </td>
+                <td>
+                  <span className={styles.extras}>
+                    {product.extras.map((extra) => (
+                      <span key={extra._id}>{extra.text}, </span>
+                    ))}
+                  </span>
+                </td>
+                <td>
+                  <span className={styles.price}>₹{product.prices[0]}</span>
+                </td>
+                <td>
+                  <span className={styles.quantity}>{product.quantity}</span>
+                </td>
+                <td>
+                  <span className={styles.total}>
+                    ₹{product.price * product.quantity}
+                  </span>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -167,6 +168,9 @@ const Cart = () => {
               >
                 CASH ON DELIVERY
               </button>
+              {/* <button className={styles.payButton}>
+                <a href="https://rzp.io/l/PCk47XAjiI">INTERNET BANKING</a>
+              </button> */}
               <PayPalScriptProvider
                 options={{
                   "client-id":

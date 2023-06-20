@@ -1,43 +1,64 @@
 .container {
-    height: calc(100vh - 160px);
-    background-color: #222;
-    padding-top: 10px;
+  height: calc(100vh - 160px);
+  background-color: #222;
+  padding-top: 10px;
+}
+.item {
+  display: flex;
+}
+.care {
+  margin-left: 5vw;
 }
 
 .card {
-    padding: 0 30px;
-    text-align: center;
+  padding: 0 30px;
+  margin-left: 50px;
 }
 
 .title {
-    text-align: center;
-    font-size: 15px;
-    color: #b7903c;
+  font-size: 20px;
+  color: #b7903c;
 }
 
 .text {
-    color: lightgray;
+  color: lightgray;
 }
-
+.unorderlist {
+  color: lightgray;
+  font-size: 20px;
+}
 .motto {
-    color: rgb(211, 211, 211);
-    text-align: center;
+  color: rgb(211, 211, 211);
+  text-align: center;
 }
 
 @media screen and (max-width: 480px) {
-    .container {
-        height: 45vh;
-        text-align: center;
-    }
-    .item {
-        flex-direction: column;
-    }
+  .container {
+    height: 45vh;
+    text-align: center;
+  }
+  .item {
+    flex-direction: column;
+  }
 
-    .title {
-        font-size: 15px;
-    }
+  .title {
+    font-size: 15px;
+  }
 
-    .text {
-        font-size: 11px;
-    }
+  .text {
+    font-size: 11px;
+  }
+}
+.social {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+}
+.social_list {
+  margin-top: -10vh;
+  margin-left: 38vw;
+}
+.map {
+  margin-left: 65vw;
+  margin-top: -52vh;
 }
